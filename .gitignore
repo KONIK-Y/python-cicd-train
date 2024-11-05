@@ -160,8 +160,4 @@ cython_debug/
 #.idea/
 
 
-# Test data files
-/test/data
-
-# for Work in Progress...
-.github/workflows/
+/tests/data/
