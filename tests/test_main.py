@@ -66,7 +66,7 @@ def test_is_today_omisoka_in_cet(mock_requests_get):
     assert message == expected_message
 
 
-@freeze_time(f"{datetime.datetime(2024,12,31,10,0,0,0,tzinfo=NZST)}")
+@freeze_time(f"{datetime.datetime(2024,1,1,0,0,0,0,tzinfo=NZST)}")
 def test_is_today_omisoka_in_nzst(mock_requests_get):
     holidays = load_holidays()
     message = is_today_holiday(holidays)
