@@ -19,8 +19,8 @@ jobs:
         run: |
           echo ${{ github.event_name }}
           echo /repos/${{ github.repository_owner }}/${GITHUB_REPOSITORY#${GITHUB_REPOSITORY_OWNER}/}/pulls/${{ github.event.pull_request.number }}/comments
-            - name: Add Issue Comment
-            
+      
+      - name: Add Issue Comment
         uses: actions/github-script@v6
         with:
           script: |
