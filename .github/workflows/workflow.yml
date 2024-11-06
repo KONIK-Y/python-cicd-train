@@ -18,10 +18,10 @@ jobs:
       - name: Checkout variables
         run: |
           echo ${{ github.event_name }}
-          echo /repos/${{ github.repository_owner }}/${GITHUB_REPOSITORY#${GITHUB_REPOSITORY_OWNER}/}/pulls/${{ github.event.pull_request.number }}/comments
+          echo /repos/${{ github.repository_owner }}/${GITHUB_REPOSITORY#${GITHUB_REPOSITORY_OWNER}/pulls/${{ github.event.pull_request.number }}/comments
       - name: add comment
         run: |
-          curl -X POST -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" -H "Accept: application/vnd.github.v3+json" https://api.github.com/repos/${{ context.repo.owner }}/${{ context.repo.repo }}/pulls/${{ github.event.pull_request.number }}/comments -d '{"body": "Hello, World!", "commit_id": "${{ github.sha }}"}'
+          curl -X POST -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" -H "Accept: application/vnd.github.v3+json" https://api.github.com/repos/${{ github.repository_owner }}/${GITHUB_REPOSITORY#${GITHUB_REPOSITORY_OWNER}/pulls/${{ github.event.pull_request.number }}/comments -d '{"body": "Hello, World!", "commit_id": "${{ github.sha }}"}'
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
