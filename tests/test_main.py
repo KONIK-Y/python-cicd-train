@@ -32,7 +32,7 @@ def mock_requests_get():
 def test_is_today_holiday_on_gantan(mock_requests_get):
     holidays = load_holidays()
     message = is_today_holiday(holidays)
-    expected_message = "今日は元旦です。明けましておめでとうございます！"
+    expected_message = "今日は元旦です。明けましておめでとうございます"
     assert message == expected_message
 
 
