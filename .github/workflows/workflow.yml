@@ -51,8 +51,6 @@ jobs:
 
   need-to-approve:
     runs-on: ubuntu-latest
-    needs: test
-    if: github.event_name == 'pull_request' && github.event.action == 'opened'
     steps:
       - name: echo
         run: echo "Need to approve"
