@@ -51,6 +51,7 @@ jobs:
 
   need-to-approve:
     runs-on: ubuntu-latest
+    needs: test
     steps:
       - name: echo
         run: echo "Need to approve"
