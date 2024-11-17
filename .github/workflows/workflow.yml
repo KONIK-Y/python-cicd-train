@@ -3,7 +3,14 @@ name: Testing
 on:
   pull_request:
 jobs:
+<<<<<<< Updated upstream
   test:
+=======
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+>>>>>>> Stashed changes
     runs-on: ubuntu-latest
     steps:
       - name: Install dependencies
