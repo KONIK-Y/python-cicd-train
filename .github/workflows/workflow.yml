@@ -29,20 +29,19 @@ jobs:
           node-version: 20
           cache: 'npm'
 
-      - name: Install dependencies and build
-        run: |
-          cd frontend &&
-          npm ci &&
-          npm run build
+      - name: Navigate to Frontend Directory
+        run: cd frontend
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
+      - name: Install Dependencies
+        run: npm install
+        working-directory: ./frontend
 
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: '${{ github.workspace }}/frontend/dist'
+      - name: Build Vite App
+        run: npm run build
+        working-directory: ./frontend
 
       - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./frontend/dist
