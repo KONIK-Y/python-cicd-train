@@ -1,1 +1,1 @@
-export const basePath = '/python-cicd-train';
+export const basePath = '/python-cicd-train/';

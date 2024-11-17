@@ -22,7 +22,7 @@ if [ ! -d "$OUTPUT_DIR" ]; then
     mkdir -p "$OUTPUT_DIR"
 fi
 
-html_files=$(find "$PUBLIC_DIR" -type f -name "*.html" -print0 | xargs -0 -n1 basename)
+html_files=$(find "$PUBLIC_DIR" -type f -name "*.html" -printf "/%P\0" | tr '\0' '\n')
 
 json_array=$(echo "$html_files" | jq -R . | jq -s .)
 
