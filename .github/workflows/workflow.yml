@@ -21,7 +21,7 @@ jobs:
 
       - name: Set up Node
         run: |
-          . scripts/create_paths_json.sh ./frontend/public/ ./frontend/src/assets
+          . scripts/create_paths_json.sh ./frontend/public/ ./frontend/public/
 
       - name: Set up Node
         uses: actions/setup-node@v4
@@ -42,7 +42,7 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: frontend/dist
-          
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
