@@ -3,6 +3,7 @@ import paths from '../assets/paths.json';
 import { DefaultButton } from '../components/common/button';
 import { PreviewArea } from '../components/preview-area';
 import { Stack } from '@mui/material';
+import { basePath } from '../constant/constant';
 
 export const PreviewPage: React.FC = () => {
   const [srcPath, setSrcPaths] = useState<string>();
@@ -12,7 +13,7 @@ export const PreviewPage: React.FC = () => {
       <h1>Preview</h1>
       <Stack direction="row" spacing={2} sx={{ my: 2 }}>
         {paths.map((path) => (
-          <DefaultButton key={path} onClick={() => setSrcPaths(path)}>
+          <DefaultButton key={path} onClick={() => setSrcPaths(basePath + path)}>
             {path.toLowerCase()}
           </DefaultButton>
         ))}
