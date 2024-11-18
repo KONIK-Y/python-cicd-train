@@ -1,5 +1,5 @@
-import { Box, Container, Stack } from '@mui/material';
-import React, { useState, useEffect, useRef } from 'react';
+import { Box, Stack } from '@mui/material';
+import React, { useRef } from 'react';
 
 interface LineNumberedTextAreaProps {
   value: string;

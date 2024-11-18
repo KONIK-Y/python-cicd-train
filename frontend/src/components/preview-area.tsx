@@ -3,9 +3,10 @@ import { Iframe } from './common/iframe';
 
 interface PreviewAreaProps {
   previewSrc: string | undefined;
+  controller?: React.ReactNode;
 }
 
-export const PreviewArea: React.FC<PreviewAreaProps> = ({ previewSrc }) => {
+export const PreviewArea: React.FC<PreviewAreaProps> = ({ previewSrc, controller }) => {
   return (
     <Box
       sx={{
@@ -19,6 +20,7 @@ export const PreviewArea: React.FC<PreviewAreaProps> = ({ previewSrc }) => {
         border: '2px solid #bbb',
       }}
     >
+      {controller}
       {previewSrc ? <Iframe srcPath={previewSrc} /> : <p>No path selected</p>}
     </Box>
   );

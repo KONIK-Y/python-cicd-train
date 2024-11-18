@@ -7,9 +7,9 @@ interface ButtonProps {
   value?: string;
 }
 
-export const DefaultButton: React.FC<ButtonProps> = ({ onClick, children }: ButtonProps) => {
+export const DefaultButton: React.FC<ButtonProps> = ({ onClick, children, value }: ButtonProps) => {
   return (
-    <Button onClick={onClick} color="primary" variant="contained">
+    <Button onClick={onClick} color="primary" variant="contained" value={value}>
       {children}
     </Button>
   );

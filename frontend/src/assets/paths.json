@@ -1,1 +1,10 @@
-["/preview/profile.html", "/preview/template.html"]
+[
+  "/preview/profile.html",
+  "/preview/template.html",
+  "/preview/preview.html",
+  "/preview/cron/daily.html",
+  "/preview/cron/weekly.html",
+  "/preview/cron/monthly.html",
+  "/preview/cron/yearly.html",
+  "/preview/individual.html"
+]

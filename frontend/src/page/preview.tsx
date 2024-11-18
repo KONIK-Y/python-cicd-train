@@ -10,10 +10,11 @@ export const PreviewPage: React.FC = () => {
   const [srcPath, setSrcPaths] = useState<string>();
   const [value, setValue] = useState<string>('');
   const handlePathChange = useCallback(
-    (e: React.ChangeEvent<HTMLButtonElement>) => {
-      setSrcPaths(e.target.value);
+    (e: React.MouseEvent<HTMLButtonElement>) => {
+      setSrcPaths(e.currentTarget.value);
+      console.log(e.currentTarget.value);
     },
-    [paths]
+    [srcPath]
   );
   return (
     <>

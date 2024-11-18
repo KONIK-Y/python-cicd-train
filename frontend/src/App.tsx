@@ -1,19 +1,35 @@
-import { Container } from '@mui/material';
+import { Box, Container, Stack } from '@mui/material';
 import { PreviewPage } from './page/preview';
+import { SideBar } from './components/common/sidebar';
+import { drawerWidth } from './constant/constant';
 
 function App() {
   return (
-    <Container
+    <Box
+      id="wrapper"
       sx={{
         display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center',
         height: '100vh',
       }}
     >
-      <PreviewPage />
-    </Container>
+      <SideBar>
+        <Box>
+          <Stack direction="row" spacing={2} sx={{ my: 2 }}>
+            <p>Menu</p>
+          </Stack>
+        </Box>
+      </SideBar>
+      <Box component={'main'} sx={{ height: '100%', flexGrow: 1 }}>
+        <Container
+          maxWidth="lg"
+          sx={{
+            height: '100%',
+          }}
+        >
+          <PreviewPage />
+        </Container>
+      </Box>
+    </Box>
   );
 }
 
