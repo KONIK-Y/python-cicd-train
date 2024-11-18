@@ -14,7 +14,7 @@ export const PreviewArea: React.FC<PreviewAreaProps> = ({ previewSrc, controller
         justifyContent: 'center',
         alignItems: 'center',
         width: '100%',
-        height: '80%',
+        height: '100%',
         padding: '10px',
         borderRadius: '5px',
         border: '2px solid #bbb',

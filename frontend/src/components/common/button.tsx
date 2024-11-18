@@ -2,7 +2,7 @@ import { Button } from '@mui/material';
 import React from 'react';
 
 interface ButtonProps {
-  onClick: (event: React.MouseEvent<HTMLButtonElement>) => void | (() => void);
+  onClick: (event: any) => void | (() => void);
   children: React.ReactNode;
   value?: string;
 }

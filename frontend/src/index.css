@@ -16,3 +16,7 @@ iframe {
   height: 100%;
   border: none;
 }
+
+.text-area:focus {
+  outline: none;
+}
