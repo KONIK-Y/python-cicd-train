@@ -1,22 +1,24 @@
-import { ITree } from '../types/types';
+import { Folder } from '../types/types';
 
-export function sortEachDirectory(paths: string[]): ITree {
-  const sortedTree: ITree = {};
+export function groupByFolder(paths: string[]): Folder {
+  const result: Folder = {};
+
   paths.forEach((path) => {
     const trimmed = path.startsWith('/') ? path.slice(1) : path;
-    const pathArr = trimmed.split('/');
-
-    if (pathArr.length === 0) return;
-
-    const directory = pathArr[0];
-
-    if (!directory) return;
-
-    if (sortedTree[directory]) {
-      sortedTree[directory].push(path);
-    } else {
-      sortedTree[directory] = [path];
-    }
+    trimmed.split('/').reduce((acc: Folder, part, i, arr) => {
+      if (i === arr.length - 1) {
+        if (!acc.files) {
+          acc.files = [];
+        }
+        acc.files.push(part);
+      } else {
+        if (!acc[part]) {
+          acc[part] = {};
+        }
+      }
+      return acc[part] as Folder;
+    }, result);
   });
-  return sortedTree;
+
+  return result;
 }
